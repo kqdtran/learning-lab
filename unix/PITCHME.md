@@ -69,11 +69,13 @@
 
 - git alias new_cmd = 'LONG COMMAND'
 - Better, put in ~/.gitconfig
+
 ```
 [alias]
     st = status
     cl = log --pretty --date=relative
 ```
+
 - I'm lazy, so I use Bash aliases, e.g. `alias st = git status`
 
 +++
@@ -137,6 +139,7 @@
 ## csv
 
 - Manipulating csv with `cut` and `sort`
+
 ```
 1111,2222,3333,4444
 aaaa,bbbb,cccc,dddd
