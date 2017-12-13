@@ -91,6 +91,8 @@
 - psaux on Update
 - kill and pkill
 
++++
+
 ## Foreground & Background
 
 - Ctrl+C to terminate
@@ -104,6 +106,8 @@
 
 - username/password or public-private keypair
 - `scp file server:/path/on/server`
+
++++
 
 ## Permissions
 
