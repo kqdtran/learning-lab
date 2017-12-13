@@ -100,7 +100,10 @@
 - Ctrl+C to terminate
 - Ctrl+Z to suspend
 - fg, bg, jobs, disown %1 OR nohup
-- ![](https://i.imgur.com/XyPyVUp.png)
+
++++
+
+![](https://i.imgur.com/XyPyVUp.png)
 
 ---
 
