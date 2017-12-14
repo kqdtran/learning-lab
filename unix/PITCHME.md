@@ -40,9 +40,9 @@
 ## Wildcard and Redirection
 
 - `rm -rf ~/*`
-- < redirect from stdin
-- > redirect from stdout, replacing existing content
-- >> redirect from stdout, appending after existing content
+- `<` redirect from stdin
+- `>` redirect from stdout, replacing existing content
+- `>>` redirect from stdout, appending after existing content
 
 +++
 
