@@ -31,9 +31,7 @@
 - Application Server (Nginx, Gunicorn, etc.)
 - Database (PostgreSQL)
 
-+++
-
-?image=assets/quorum_stack.png&size=auto 85%
++++?image=assets/quorum_stack.png&size=auto 85%
 
 +++
 
