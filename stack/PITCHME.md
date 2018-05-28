@@ -33,7 +33,7 @@
 
 +++
 
-![](https://i.imgur.com/G8IunsV.png)
+![](assets/quorum_stack.png =100x20)
 
 +++
 
