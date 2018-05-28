@@ -31,11 +31,7 @@
 - Application Server (Nginx, Gunicorn, etc.)
 - Database (PostgreSQL)
 
-+++
-
-![](assets/quorum_stack.png =100x20)
-
-+++
+---?image=assets/quorum_stack.png&size=auto 75%
 
 ## Load Balancing & Auto-scaling
 
