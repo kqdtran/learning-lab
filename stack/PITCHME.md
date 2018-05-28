@@ -17,10 +17,15 @@
 
 ---
 
-## What Happens When You Type quorum.us in the Browser?
+## What Happens When...?
 
 - Based on the age-old interview question, what happens when you type google.com
 - (We'll skip the key-pressed events / browser magic that we don't control)
+
++++
+
+## At a Glance
+
 - DNS Lookup (quorum.us => 12.34.56.789)
 - Elastic Load Balancer & Requests Routing
 - Application Server (Nginx, Gunicorn, etc.)
@@ -28,26 +33,31 @@
 
 +++
 
-## Load Balancing
-
-- history | more
-- `export HISTTIMEFORMAT='%F %T '` to see timestamp
-- Ctrl+R to search thru history, Ctrl+G to get out
-- !! or Ctrl + P to execute last command
-- !X to execute commands at X position in history
+![](https://i.imgur.com/G8IunsV.png)
 
 +++
 
-## Wildcard and Redirection
+## Load Balancing & Auto-scaling
 
-- `rm -rf ~/*`
-- `<` redirect from stdin
-- `>` redirect from stdout, replacing existing content
-- `>>` redirect from stdout, appending after existing content
+- Distributes load across instances
+- Monitors the "health" of an instance
+- Auto-scales to meet demand and increase throughput
+- Scale out under high CPU or high memory
+- Scale in (min 2) under low CPU and low memory
+- Why 2? Redundancy & failure tolerance
 
 +++
 
-## Pipe
+## Application Server (nginx)
+
+- nginx: a reverse proxy configured with HTTPS certs
+- Redirects HTTP => HTTPS
+- Can handle static files (ours are served via CloudFront instead)
+- Passes off the requests to Gunicorn workers
+
++++
+
+## Application Server (gunicorn)
 
 - Redirect the output of one command into another
 - `ls -l | grep ^d | wc -l`
