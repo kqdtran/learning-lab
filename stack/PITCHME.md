@@ -87,7 +87,7 @@
 
 +++
 
-## Infrastructure (end)
+### Infrastructure (end)
 
 - So far, lots of buzzwords and braindumps
 - Questions?
@@ -129,7 +129,7 @@
 
 - Primarily in Ansible
 - Configures servers, installs packages, monitors instances, etc.
-- Is essential to our deployment pipeline (more later)
+- Is essential to our deployment pipeline
 - CI/CD: Shippable, CodeFactor
 
 ---
@@ -149,39 +149,25 @@
 
 ## Developer Access
 
-- tail -f to see running log
-- Find a pattern with `grep` or `ag`
-- Combine together to see only items relevant to you
-
-+++
-
-## sed
-
-- `sed -n 16224,16240p filename`
-
-+++
-
-## csv
-
-- Manipulating csv with `cut` and `sort`
-
-```
-1111,2222,3333,4444
-aaaa,bbbb,cccc,dddd
-
-$ cut --complement -f 3 -d, inputfile
-1111,2222,4444
-aaaa,bbbb,dddd
-
-$ cut -d , -f 1-2,4-, inputfile
-```
+- TODO
 
 ---
 
-## What else?
+## What We Talked About
 
-- vim/tmux living in terminal
-- regular expression! power up `sed` and `awk`
+- Overview of what happens when you go to quorum.us
+- Quorum's scalable infrastructure
+- Our stack and where we spend most of our time
+- Brief intro to deployment
+- Accounts & access
+
++++
+
+### What's next?
+
+- Sets up everyone's developing environment
+- Starts contributing
+- `git push origin master --force` ¯\_(ツ)_/¯
 
 ---
 
