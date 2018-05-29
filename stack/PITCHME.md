@@ -98,8 +98,8 @@
 
 ### Infrastructure (end)
 
-- So far, lots of buzzwords and braindumps
-- Questions?
+- Questions so far?
+- Let's talk about our specific stack next!
 
 ---
 
