@@ -129,6 +129,7 @@
 - 2+ production (client-facing) instances
 - 2 production (dev-facing) servers to process data (Update, State Update)
 - Various crawler servers
+- Staging/Beta/Testing
 - Proxies
 - An SSH bastion server that sits in front of our servers and the database
 
@@ -152,7 +153,36 @@
 
 ## How Code Gets Deployed
 
-- TODO
+![](assets/ansible.jpg)
+
++++
+
+### Breaking Down the Process
+
+- Developers make feature branches
+- Passes CI automated tests and human code review
+- Code is merged into a hotfix/release branch
+- Changes are live on staging and go through several (automated & human-tested) QA rounds
+
++++
+
+- Code is merged into master
+- `git pull` on Update (the dev-facing production servers)
+- A blueprint (an image, or AWS AMI) of staging is made
+- Using the blueprint, we then launch an Auto Scaling Group with as many (client-facing) production instances as needed
+
++++
+
+![](assets/blue-green.jpg)
+
++++
+
+### Blue-green Deployment
+
+- Also known as immutable or rolling deployment
+- Once the new set of instances (green) is ready, we register it behind the ELB
+- At the same time, we deregister the old set (blue)
+- Minimal downtime, if any, because of the routing switch
 
 ---
 
