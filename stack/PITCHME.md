@@ -107,9 +107,9 @@
 
 - Python 2.7 :( -- we have 3 years
 - Django 1.10 (soon to be on 1.11)
-- PostgreSQL 10
+- PostgreSQL 10 on RDS
 - Nginx / Gunicorn
-- Supervisor to watch all of the above (bar Postgres)
+- Supervisor to watch all of the above (except RDS)
 
 +++
 
@@ -120,7 +120,7 @@
 - S3 for file storage
 - Cloudfront (CDN) for static files
 - Cloudwatch for alerts & monitoring
-- ...
+- ... and more!
 
 +++
 
@@ -141,6 +141,14 @@
 - Configures servers, installs packages, monitors instances, etc.
 - Is essential to our deployment pipeline
 - CI/CD: Shippable, CodeFactor
+
+### Monitoring
+
+- AWS Cloudwatch
+- Pingdom / NewRelic
+- Sentry as our error logger
+- LogRocket as our session replay tool
+- We're working on a better logging system! (i.e. Logly, Logstash/ELK)
 
 ---
 
@@ -182,13 +190,23 @@
 - Also known as immutable or rolling deployment
 - Once the new set of instances (green) is ready, we register it behind the ELB
 - At the same time, we deregister the old set (blue)
-- Minimal downtime, if any, because of the routing switch
+- Minimal downtime, if any, thanks to the one and only routing switch
 
 ---
 
 ## Developer Access
 
-- TODO
+- An SSH bastion account to connect to the database
+- Github accounts to contribute code
+- Quorum accounts (dev/prod)
+- AWS accounts, if needed for a project
+- IMPORTANT: please turn on 2FA for all of your Quorum accounts
+
++++
+
+- Authenticating to bastion is always the first step
+- IP-limited access to all non-client-facing servers
+- Needs to access Quorum from home? VPN!
 
 ---
 
@@ -202,9 +220,9 @@
 
 +++
 
-### What's next?
+### Next Steps
 
-- Sets up everyone's developing environment
+- Sets up everyone's development environment
 - Starts contributing code to production!
 - `git push origin master --force` ¯\\_(ツ)_/¯
 
