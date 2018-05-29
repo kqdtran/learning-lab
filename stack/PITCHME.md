@@ -142,6 +142,8 @@
 - Is essential to our deployment pipeline
 - CI/CD: Shippable, CodeFactor
 
++++
+
 ### Monitoring
 
 - AWS Cloudwatch
