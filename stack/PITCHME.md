@@ -31,40 +31,48 @@
 - Application Server (Nginx, Gunicorn, etc.)
 - Database (PostgreSQL)
 
-+++?image=assets/quorum_stack.png&size=auto 85%
++++?image=assets/quorum_stack.png&size=auto 90%
 
-+++
+---
 
-## Load Balancing & Auto-scaling
+## Load Balancing
 
 - Distributes load across instances
 - Monitors the "health" of an instance
-- Auto-scales to meet demand and increase throughput
-- Scale out under high CPU or high memory
-- Scale in (min 2) under low CPU and low memory
-- Why 2? Redundancy & failure tolerance
+- What should we do if our instances are under high load?
 
 +++
 
-## Application Server (nginx)
+## Auto-scaling
 
-- nginx: a reverse proxy configured with HTTPS certs
+- Auto-scales to meet demand and increase throughput
+- Scale out (`instances += 1`) under high CPU or high memory
+- Scale in (min 2) under low CPU and low memory
+- Why 2? Redundancy & failure tolerance
+
+---?image=assets/orge.jpg
+
++++
+
+## nginx
+
+- A reverse proxy configured with HTTPS certs
 - Redirects HTTP => HTTPS
 - Can handle static files (ours are served via CloudFront instead)
 - Passes off the requests to Gunicorn workers
 
 +++
 
-## Application Server (gunicorn)
+## Application Server (Gunicorn)
 
-- Redirect the output of one command into another
-- `ls -l | grep ^d | wc -l`
-- Print the number of subdirectories in the current directory
-- Combining tail and grep can be very powerful for reading logs
+- Spawns workers to process requests in parallel
+- Depends on how many processors a server/machine has
+- Can be sync (in parallel) or async (concurrently)
+- Manages the workload and executes the Python and Django code
 
 ---
 
-## Bash Aliases and Environment Variables
+## Database (PostgreSQL)
 
 - alias short = 'LONG COMMAND', e.g. .. = 'cd ..'
 - For lasting effect, put in ~/.bash_aliases or ~/.bash_profile
