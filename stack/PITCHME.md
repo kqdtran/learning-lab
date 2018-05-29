@@ -15,6 +15,15 @@
 - Developer access to Quorum servers
 - Q&A
 
++++
+
+### Disclaimer
+
+- Lots of information
+- Serves as an introduction
+- We'll cover specific topics in depth as the summer progresses
+- Stops me at anytime for questions
+
 ---
 
 ## What Happens When...?
@@ -166,7 +175,7 @@
 ### What's next?
 
 - Sets up everyone's developing environment
-- Starts contributing
+- Starts contributing code to production!
 - `git push origin master --force` ¯\\_(ツ)_/¯
 
 ---
