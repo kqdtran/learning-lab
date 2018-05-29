@@ -153,7 +153,7 @@
 
 ## How Code Gets Deployed
 
-![](assets/ansible.jpg)
+![](assets/ansible.png)
 
 +++
 
