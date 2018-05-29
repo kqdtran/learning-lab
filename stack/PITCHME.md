@@ -198,7 +198,7 @@
 
 ## Developer Access
 
-- An SSH bastion account to connect to the database
+- An SSH bastion account to connect to the database (and various servers)
 - Github accounts to contribute code
 - Quorum accounts (dev/prod)
 - AWS accounts, if needed for a project
