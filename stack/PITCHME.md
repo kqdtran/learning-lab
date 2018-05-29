@@ -11,8 +11,8 @@
 - What happens when you type quorum.us in the browser?
 - Infrastructure
 - Quorum's backend and frontend stack
-- Developer access to Quorum servers
 - How code gets deployed
+- Developer access to Quorum servers
 - Q&A
 
 ---
@@ -35,7 +35,7 @@
 
 ---
 
-## Load Balancing
+### Load Balancing
 
 - Distributes load across instances
 - Monitors the "health" of an instance
@@ -43,18 +43,18 @@
 
 +++
 
-## Auto-scaling
+### Auto-scaling
 
 - Auto-scales to meet demand and increase throughput
 - Scale out (`instances += 1`) under high CPU or high memory
 - Scale in (min 2) under low CPU and low memory
 - Why 2? Redundancy & failure tolerance
 
----?image=assets/orge.jpg
+---?image=assets/orge.jpg&size=auto 95%
 
 +++
 
-## nginx
+### nginx
 
 - A reverse proxy configured with HTTPS certs
 - Redirects HTTP => HTTPS
@@ -63,86 +63,91 @@
 
 +++
 
-## Application Server (Gunicorn)
+### Application Server (Gunicorn)
 
 - Spawns workers to process requests in parallel
 - Depends on how many processors a server/machine has
 - Can be sync (in parallel) or async (concurrently)
 - Manages the workload and executes the Python and Django code
 
++++
+
+### Django
+
+- Is where most of our day is spent
+- Processes the request from Gunicorn by executing Python code, calling APIs, accessing the database, rendering views, etc.
+- Talks to PostgreSQL using the Django ORM
+
 ---
 
 ## Database (PostgreSQL)
 
-- alias short = 'LONG COMMAND', e.g. .. = 'cd ..'
-- For lasting effect, put in ~/.bash_aliases or ~/.bash_profile
-- Similarly, export VAR = 'value'
-- `echo $VAR`
-- Sourcing with `source`
+- Hosted by AWS RDS
+- Interfaces with Python/Django via the ORM and psycopg2
 
 +++
 
-## Git Aliases
+## Infrastructure (end)
 
-- git alias new_cmd = 'LONG COMMAND'
-- Better, put in ~/.gitconfig
-
-```
-[alias]
-    st = status
-    cl = log --pretty --date=relative
-```
-
-- I'm lazy, so I use Bash aliases, e.g. `alias st = git status`
-
-+++
-
-## (Z)umping around
-
-- z https://github.com/rupa/z
-- ag == find+grep on steroid
+- So far, lots of buzzwords and braindumps
+- Questions?
 
 ---
 
-## Processes
+## Backend Stack
 
-- ps
-- psaux on Update
-- kill and pkill
-
-+++
-
-## Foreground & Background
-
-- Ctrl+C to terminate
-- Ctrl+Z to suspend
-- fg, bg, jobs, disown %1 OR nohup
+- Python 2.7 :( -- we have 3 years
+- Django 1.10 (soon to be on 1.11)
+- PostgreSQL 10
+- Nginx / Gunicorn
+- Supervisor to watch all of the above (bar Postgres)
 
 +++
 
-![](https://i.imgur.com/XyPyVUp.png)
+### AWS
+
+- EC2 as our web servers / instances on Ubuntu 14.10
+- RDS as our database
+- S3 for file storage
+- Cloudfront (CDN) for static files
+- Cloudwatch for alerts & monitoring
+- ...
+
++++
+
+### Servers
+
+- 2+ production (client-facing) instances
+- 2 production (dev-facing) servers to process data (Update, State Update)
+- Various crawler servers
+- Proxies
+- An SSH bastion server that sits in front of our servers and the database
+
++++
+
+### DevOps
+
+- Primarily in Ansible
+- Configures servers, installs packages, monitors instances, etc.
+- Is essential to our deployment pipeline (more later)
+- CI/CD: Shippable, CodeFactor
 
 ---
 
-## SSH, SCP, and SFTP
+## Frontend Stack
 
-- username/password or public-private keypair
-- `scp file server:/path/on/server`
-
-+++
-
-## Permissions
-
-- `ls -lah` to see details
-- `chown` changes owner
-- `chgrp` changes groups
-- `chmod` changes permission
-- 4: read, 2: write, 1: execute
-- What's 660? How about 744?
+- TODO
+- Need Jack's halp
 
 ---
 
-## Reading logs and csvs
+## How Code Gets Deployed
+
+- TODO
+
+---
+
+## Developer Access
 
 - tail -f to see running log
 - Find a pattern with `grep` or `ag`
