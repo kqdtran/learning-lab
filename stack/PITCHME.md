@@ -115,7 +115,7 @@
 
 ### AWS
 
-- EC2 as our web servers / instances on Ubuntu 14.10
+- EC2 as our web servers on Ubuntu 14.10
 - RDS as our database
 - S3 for file storage
 - Cloudfront (CDN) for static files
@@ -156,8 +156,7 @@
 
 ## Frontend Stack
 
-- TODO
-- Need Jack's halp
+![](assets/frontend.jpg)
 
 ---
 
