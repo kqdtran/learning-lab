@@ -167,7 +167,7 @@
 
 - Sets up everyone's developing environment
 - Starts contributing
-- `git push origin master --force` ¯\_(ツ)_/¯
+- `git push origin master --force` ¯\\_(ツ)_/¯
 
 ---
 
