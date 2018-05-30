@@ -20,7 +20,7 @@
 ### Disclaimer
 
 - Lots of information
-- Serves as an introduction
+- Serves as a general introduction
 - We'll cover specific topics in depth as the summer progresses
 - Stops me at anytime for questions
 
@@ -31,6 +31,8 @@
 - Based on the age-old interview question, what happens when you type google.com
 - (We'll skip the key-pressed events / browser magic that we don't control)
 
++++?image=assets/quorum_stack.png&size=auto 90%
+
 +++
 
 ## At a Glance
@@ -39,8 +41,6 @@
 - Elastic Load Balancer & Requests Routing
 - Application Server (Nginx, Gunicorn, etc.)
 - Database (PostgreSQL)
-
-+++?image=assets/quorum_stack.png&size=auto 90%
 
 ---
 
@@ -105,7 +105,7 @@
 
 ## Backend Stack
 
-- Python 2.7 :( -- we have 3 years
+- Python 2.7 -- we have 2.5 years :(
 - Django 1.10 (soon to be on 1.11)
 - PostgreSQL 10 on RDS
 - Nginx / Gunicorn
@@ -128,7 +128,7 @@
 
 - 2+ production (client-facing) instances
 - 2 production (dev-facing) servers to process data (Update, State Update)
-- Various crawler servers
+- 5+ crawler servers
 - Staging/Beta/Testing
 - Proxies
 - An SSH bastion server that sits in front of our servers and the database
@@ -139,8 +139,8 @@
 
 - Primarily in Ansible
 - Configures servers, installs packages, monitors instances, etc.
-- Is essential to our deployment pipeline
 - CI/CD: Shippable, CodeFactor
+- Deployment (more later)
 
 +++
 
@@ -170,12 +170,12 @@
 
 - Developers make feature branches
 - Passes CI automated tests and human code review
-- Code is merged into a hotfix/release branch
+- Code is merged into a hotfix/release branch or master
 - Changes are live on staging and go through several (automated & human-tested) QA rounds
 
 +++
 
-- Code is merged into master
+- Release is merged into master
 - `git pull` on Update (the dev-facing production servers)
 - A blueprint (an image, or AWS AMI) of staging is made
 - Using the blueprint, we then launch an Auto Scaling Group with as many (client-facing) production instances as needed
@@ -200,12 +200,13 @@
 - An SSH bastion account to connect to the database (and various servers)
 - Github accounts to contribute code
 - Quorum accounts (dev/prod)
+- Sentry for error logging
 - AWS accounts, if needed for a project
 - IMPORTANT: please turn on 2FA for all of your Quorum accounts
 
 +++
 
-- Authenticating to bastion is always the first step
+- Authenticating to bastion/db is always the first step
 - IP-limited access to all non-client-facing servers
 - Needs to access Quorum from home? VPN!
 
@@ -218,14 +219,6 @@
 - Our stack and where we spend most of our time
 - Brief intro to deployment
 - Accounts & access
-
-+++
-
-### Next Steps
-
-- Sets up everyone's development environment
-- Starts contributing code to production!
-- `git push origin master --force` ¯\\_(ツ)_/¯
 
 ---
 
