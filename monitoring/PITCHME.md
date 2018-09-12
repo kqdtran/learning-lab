@@ -27,6 +27,7 @@ Monitoring tells you whether a system is working, observability lets you ask why
 - Scoped
 - Long-lived
 
+---
 
 ## Alerts
 
