@@ -59,3 +59,9 @@ Monitoring tells you whether a system is working, observability lets you ask why
 - Alerting / visualization
 - Distributed tracing (e.g. APM)
 - Log aggregation/analytics
+
+---
+
+## Monitoring Tools
+
+![](assets/stack.png)
