@@ -10,7 +10,7 @@
 
 ## Metrics
 
-+++?image=assets/metrics.png
+![](assets/metrics.png)
 
 ---
 
