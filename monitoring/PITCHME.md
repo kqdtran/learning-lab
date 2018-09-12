@@ -10,17 +10,17 @@
 
 ## Metrics
 
-?image=assets/metrics.png
++++?image=assets/metrics.png
 
 ---
 
-## Events
+## Events (& Alerts)
 
-Given a metric at a particular time, what can we do about it?
+Given a metric at a particular timestamp, what can we do about it?
 
 ---
 
-## What good data looks like
+## Good data is...
 
 - Well understood
 - Granular
