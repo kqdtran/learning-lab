@@ -43,7 +43,7 @@
 - Classic ELB operates at Layer 4 of the OSI model, whereas ALB operates at Level 7
 - But what is the OSI model??
 
-+++?image=assets/osi-model.jpg&size=auto 70%
++++?image=assets/osi-model.jpg&size=auto 75%
 
 +++
 
@@ -54,21 +54,13 @@
 - At Layer 7, the ALB has the ability to inspect application-level content, not just IP and port
 - The ALB offers basically everything the ELB does and more
 
-+++
-
-### ELB v.s. ALB: Similarities
-
-- Healthcheck
-- Sticky Sessions
-- Connection Draining
-
 ---
 
 ## Key ALB concepts
 
-- Rules: determine what actions are taken based on a URL pattern or a host
-- Priorities: tell the ALB which order to evaluate the rules
-- Target Groups: used to route requests to all registered targets as part of a rule
+- *Rules*: determine what actions are taken based on a URL pattern or a host
+- *Priorities*: tell the ALB which order to evaluate the rules
+- *Target Groups*: used to route requests to all registered targets as part of a rule
 - Each Target Group specifies a protocol/port and configures its own healthcheck 
 
 ---
@@ -122,4 +114,3 @@
 ---
 
 ## Live Demo on AWS
-
