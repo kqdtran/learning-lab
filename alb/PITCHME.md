@@ -43,9 +43,7 @@
 - Classic ELB operates at Layer 4 of the OSI model, whereas ALB operates at Level 7
 - But what is the OSI model??
 
-+++?image=assets/osi-model.jpg&size=auto 50%
-
-### The OSI Model
++++?image=assets/osi-model.jpg&size=auto 70%
 
 +++
 
@@ -109,15 +107,17 @@
 - E.g. `/img/*` would go to its own target group that fetches static files
 - E.g. `/login` can be forwarded to a microservice (e.g. an AWS Lambda) that does just authentication
 
----?image=assets/QBits_Khoa.002.jpeg&size=auto 50%
+---
 
 ## Deployment Using the ALB Recap
 
-+++?image=assets/QBits_Khoa.003.jpeg&size=auto 50%
++++?image=assets/QBits_Khoa.002.jpeg&size=auto 70%
 
-+++?image=assets/QBits_Khoa.004.jpeg&size=auto 50%
++++?image=assets/QBits_Khoa.003.jpeg&size=auto 70%
 
-+++?image=assets/QBits_Khoa.005.jpeg&size=auto 50%
++++?image=assets/QBits_Khoa.004.jpeg&size=auto 70%
+
++++?image=assets/QBits_Khoa.005.jpeg&size=auto 70%
 
 ---
 
