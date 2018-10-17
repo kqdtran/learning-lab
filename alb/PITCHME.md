@@ -13,6 +13,8 @@
 - Deployment Using the ALB Recap
 - Live Demo on AWS
 
+---
+
 ## What is Load Balancing?
 
 - Distributes incoming network traffic across a group of servers
