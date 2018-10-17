@@ -47,7 +47,7 @@
 
 ### The OSI Model
 
-![](assets/osi-model.jpg)
+?image=assets/osi-model.jpg&size=auto 50%
 
 +++
 
@@ -115,19 +115,19 @@
 
 ## Deployment Using the ALB Recap
 
-![](QBits_Khoa.002.jpeg)
+?image=assets/QBits_Khoa.002.jpeg&size=auto 50%
 
 +++
 
-![](QBits_Khoa.003.jpeg)
+?image=assets/QBits_Khoa.003.jpeg&size=auto 50%
 
 +++
 
-![](QBits_Khoa.004.jpeg)
+?image=assets/QBits_Khoa.004.jpeg&size=auto 50%
 
 +++
 
-![](QBits_Khoa.005.jpeg)
+?image=assets/QBits_Khoa.005.jpeg&size=auto 50%
 
 ---
 
